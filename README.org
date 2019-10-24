@@ -1,11 +1,11 @@
 * Fall 2019 - Lab 06
 
-* Last name:
+* Last name: Wu
 
-* First name:
+* First name: Jeffrey
 
 
-* GitHub username:
+* GitHub username: jwu01
 
 * Notes:
 
