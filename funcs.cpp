@@ -3,6 +3,7 @@
 #include <fstream>
 #include <cstdlib>
 #include <climits>
+#include <sstream>
 #include "funcs.h"
 
 std::string removeLeadingSpaces(std::string line){
@@ -29,5 +30,34 @@ std::string unindent(std::string fn){
       res += removeLeadingSpaces(line) + "\n";
    }
    fin.close();
+   return res;
+}
+
+int countChar(std::string line, char c){
+   int count = 0;
+   bool start = true;
+   for(int i = 0; i < line.length(); i++){
+      if(line[i] == c){
+         count++;
+      }
+   }
+   return count;
+}
+
+std::string indent(std::string text){
+   std::string res = "";
+   int open = 0;
+   int close = 0;
+   std::stringstream ss(text);
+   std::string line;
+   while(std::getline(ss,line,'\n')){
+      close += countChar(line,'}');
+      for(int i = 0; i < open-close; i++){
+         res += "\t";
+      }
+      res += line;
+      open += countChar(line,'{');
+      res +=  "\n";
+   }
    return res;
 }

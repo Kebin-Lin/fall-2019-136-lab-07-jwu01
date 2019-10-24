@@ -18,3 +18,20 @@ TEST_CASE("unindent"){
                                  R"(})" "\n");
 
 }
+
+TEST_CASE("countchar"){
+    CHECK(countChar("int main(){" , '{') == 1);
+    CHECK(countChar("int main(){" , '}') == 0);
+}
+
+TEST_CASE("indent"){
+   CHECK(indent(unindent("bad.cpp")) == R"(int main(){)" "\n"
+                                        "\t" R"(// Hi, I'm a program!)" "\n"
+                                        "\t" R"(int x = 1;)" "\n"
+                                        "\t" R"(for(int i = 0; i < 10; i++) {)" "\n"
+                                        "\t" "\t" R"(cout << i;)" "\n"
+                                        "\t" "\t" R"(cout << endl;)" "\n"
+                                        "\t" R"(})" "\n"
+                                        R"(})" "\n");
+
+}

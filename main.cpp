@@ -5,5 +5,8 @@
 
 int main(int argc, char *argv[])
 {
-  return 0;
+   std::string fn;
+   std::cout << "enter a file to format: ";
+   std:: cin >> fn;
+   std::cout << indent(unindent(fn)) << std::endl;
 }
