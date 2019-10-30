@@ -1,5 +1,5 @@
 Joe Reviews my Code
-
+-------------------
 Running each test case ran successfully on my machine, it was a good idea to test each function in funcs.cpp 
 independently because it encourages accurate return values. After reviewing if the tests return accurate values, 
 I searched for any of the techniques that my previous partner and I talked about in producing efficient test checks. 
