@@ -61,3 +61,9 @@ std::string indent(std::string text){
    }
    return res;
 }
+
+void format(std::string filename) {
+   std::string formatted = indent(unindent(filename));
+   std::ofstream fout(filename);
+   fout << formatted;
+}
